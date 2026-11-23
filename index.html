@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gala Royale | Noite de Outono 2026</title>
+    <meta name="description" content="Uma noite inesquecível de alta gastronomia, música clássica e filantropia. Gala Royale - Noite de Outono 2026.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cinzel, Playfair Display & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para Ícones Elegantes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Configuração Personalizada do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#0B0B0F',
+                        charcoal: '#14141C',
+                        gold: {
+                            light: '#F3E5AB',
+                            DEFAULT: '#D4AF37',
+                            dark: '#AA8220',
+                        },
+                        ivory: '#F8F6F0',
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        playfair: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #AA8220 100%)',
+                        'dark-radial': 'radial-gradient(circle at center, #1A1A24 0%, #0B0B0F 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Estilos Adicionais para Detalhes Luxuosos -->
+    <style>
+        /* Barra de rolagem personalizada */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0B0F;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #AA8220;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        /* Efeito de texto dourado metálico */
+        .text-gold-metallic {
+            background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Borda sutil brilhante */
+        .gold-border-glow {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.12);
+        }
+
+        /* Padrão geométrico Art Déco sutil no fundo */
+        .bg-art-deco {
+            background-color: #0B0B0F;
+            background-image: radial-gradient(#D4AF37 0.5px, transparent 0.5px), radial-gradient(#D4AF37 0.5px, #0B0B0F 0.5px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Animação suave de entrada */
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-obsidian text-ivory font-sans antialiased selection:bg-gold selection:text-obsidian overflow-x-hidden">
+
+    <!-- ==================== 1. NAVEGAÇÃO FIXA ==================== -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-5 px-6 md:px-12 border-b border-transparent">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Monograma / Logo -->
+            <a href="#inicio" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center group-hover:bg-gold/10 transition-colors">
+                    <span class="font-cinzel text-gold font-bold text-lg tracking-wider">GR</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-cinzel text-lg md:text-xl tracking-[0.2em] text-ivory font-semibold">GALA ROYALE</span>
+                    <span class="text-[10px] tracking-[0.35em] text-gold uppercase">MMXXVI</span>
+                </div>
+            </a>
+
+            <!-- Links Desktop -->
+            <nav class="hidden lg:flex items-center space-x-8 text-xs tracking-[0.2em] uppercase font-medium">
+                <a href="#sobre" class="text-ivory/80 hover:text-gold transition-colors py-2">O Evento</a>
+                <a href="#programacao" class="text-ivory/80 hover:text-gold transition-colors py-2">Programação</a>
+                <a href="#dress-code" class="text-ivory/80 hover:text-gold transition-colors py-2">Dress Code</a>
+                <a href="#local" class="text-ivory/80 hover:text-gold transition-colors py-2">Local</a>
+                <a href="#rsvp" class="px-6 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-obsidian transition-all duration-300 font-semibold">
+                    Confirmar Presença
+                </a>
+            </nav>
+
+            <!-- Botão Menu Mobile -->
+            <button id="mobile-menu-btn" aria-label="Abrir Menu" class="lg:hidden text-gold text-2xl focus:outline-none p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-charcoal/95 backdrop-blur-md border-b border-gold/20 mt-4 rounded-2xl p-6 shadow-2xl">
+            <nav class="flex flex-col space-y-4 text-center text-xs tracking-[0.2em] uppercase">
+                <a href="#sobre" class="mobile-link text-ivory/90 hover:text-gold py-2">O Evento</a>
+                <a href="#programacao" class="mobile-link text-ivory/90 hover:text-gold py-2">Programação</a>
+                <a href="#dress-code" class="mobile-link text-ivory/90 hover:text-gold py-2">Dress Code</a>
+                <a href="#local" class="mobile-link text-ivory/90 hover:text-gold py-2">Local</a>
+                <a href="#rsvp" class="mobile-link mt-2 px-6 py-3 rounded-full bg-gold text-obsidian font-semibold">Confirmar Presença</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== 2. HERO SECTION ==================== -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden">
+        <!-- Imagem de Fundo com Sobreposição Escura -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1920&q=80" 
+                 alt="Salão de Baile Clássico Iluminado" 
+                 onerror="this.src='https://placehold.co/1920x1080/0B0B0F/D4AF37?text=Gala+Royale+2026'"
+                 class="w-full h-full object-cover object-center opacity-35 scale-105">
+            <div class="absolute inset-0 bg-gradient-to-b from-obsidian via-obsidian/70 to-obsidian"></div>
+        </div>
+
+        <!-- Conteúdo Principal do Hero -->
+        <div class="relative z-10 max-w-5xl mx-auto text-center fade-in-up">
+            <div class="inline-flex items-center space-x-3 mb-6">
+                <span class="h-[1px] w-8 md:w-12 bg-gold/60"></span>
+                <span class="text-gold text-xs md:text-sm tracking-[0.35em] uppercase font-medium">Convite Exclusivo</span>
+                <span class="h-[1px] w-8 md:w-12 bg-gold/60"></span>
+            </div>
+
+            <h1 class="font-cinzel text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-wider mb-4 text-gold-metallic leading-tight">
+                GALA ROYALE
+            </h1>
+            
+            <p class="font-playfair italic text-xl sm:text-2xl md:text-3xl text-ivory/90 mb-8">
+                Noite de Outono &bull; Edição Filantrópica 2026
+            </p>
+
+            <!-- Data e Hora -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs md:text-sm tracking-[0.25em] uppercase text-ivory/80 mb-10">
+                <div class="flex items-center gap-2">
+                    <i class="fa-regular fa-calendar text-gold"></i>
+                    <span>Sábado, 19 de Dezembro de 2026</span>
+                </div>
+                <span class="hidden sm:inline text-gold">&bull;</span>
+                <div class="flex items-center gap-2">
+                    <i class="fa-regular fa-clock text-gold"></i>
+                    <span>Às 20h00</span>
+                </div>
+            </div>
+
+            <!-- Contador Regressivo Dinâmico -->
+            <div id="countdown" class="grid grid-cols-4 gap-3 sm:gap-6 max-w-xl mx-auto mb-12">
+                <div class="bg-charcoal/80 backdrop-blur-md border border-gold/30 rounded-2xl p-3 sm:p-5 gold-border-glow">
+                    <span id="days" class="block font-cinzel text-2xl sm:text-4xl font-bold text-gold">00</span>
+                    <span class="text-[10px] sm:text-xs tracking-[0.2em] uppercase text-ivory/60 mt-1 block">Dias</span>
+                </div>
+                <div class="bg-charcoal/80 backdrop-blur-md border border-gold/30 rounded-2xl p-3 sm:p-5 gold-border-glow">
+                    <span id="hours" class="block font-cinzel text-2xl sm:text-4xl font-bold text-gold">00</span>
+                    <span class="text-[10px] sm:text-xs tracking-[0.2em] uppercase text-ivory/60 mt-1 block">Horas</span>
+                </div>
+                <div class="bg-charcoal/80 backdrop-blur-md border border-gold/30 rounded-2xl p-3 sm:p-5 gold-border-glow">
+                    <span id="minutes" class="block font-cinzel text-2xl sm:text-4xl font-bold text-gold">00</span>
+                    <span class="text-[10px] sm:text-xs tracking-[0.2em] uppercase text-ivory/60 mt-1 block">Min</span>
+                </div>
+                <div class="bg-charcoal/80 backdrop-blur-md border border-gold/30 rounded-2xl p-3 sm:p-5 gold-border-glow">
+                    <span id="seconds" class="block font-cinzel text-2xl sm:text-4xl font-bold text-gold">00</span>
+                    <span class="text-[10px] sm:text-xs tracking-[0.2em] uppercase text-ivory/60 mt-1 block">Seg</span>
+                </div>
+            </div>
+
+            <!-- Botão CTA -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#rsvp" class="w-full sm:w-auto px-10 py-4 rounded-full bg-gold text-obsidian font-semibold text-xs tracking-[0.25em] uppercase hover:bg-gold-light transition-all duration-300 shadow-[0_0_30px_rgba(212,175,55,0.4)]">
+                    Confirmar Presença (RSVP)
+                </a>
+                <a href="#sobre" class="w-full sm:w-auto px-8 py-4 rounded-full border border-ivory/30 text-ivory text-xs tracking-[0.25em] uppercase hover:border-gold hover:text-gold transition-all duration-300">
+                    Explorar o Evento
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 3. SEÇÃO "O EVENTO" ==================== -->
+    <section id="sobre" class="py-24 px-6 bg-charcoal relative border-t border-gold/15">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-xs tracking-[0.3em] uppercase font-medium block mb-3">A Celebração</span>
+                <h2 class="font-cinzel text-3xl md:text-5xl text-ivory font-semibold mb-6">Uma Noite de Esplendor e Propósito</h2>
+                <div class="w-20 h-[1px] bg-gold mx-auto mb-6"></div>
+                <p class="font-playfair text-lg md:text-xl text-ivory/80 leading-relaxed">
+                    O <span class="text-gold italic">Gala Royale</span> reúne personalidades, mecenas e convidados ilustres sob os lustres de cristal do Grande Salão Imperial. Uma celebração à alta cultura, à gastronomia refinada e ao impacto social.
+                </p>
+            </div>
+
+            <!-- 3 Pilares do Evento -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Gastronomia -->
+                <div class="bg-obsidian/80 border border-gold/20 rounded-2xl p-8 hover:border-gold/60 transition-all duration-500 group">
+                    <div class="w-14 h-14 rounded-2xl bg-charcoal border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-champagne-glasses"></i>
+                    </div>
+                    <h3 class="font-cinzel text-xl text-gold mb-3 tracking-wide">Alta Gastronomia</h3>
+                    <p class="text-ivory/70 text-sm leading-relaxed">
+                        Menu degustação em cinco tempos assinado por chefs estrelados, harmonizado com safras raras de champanhe francês e vinhos selecionados de adegas históricas.
+                    </p>
+                </div>
+
+                <!-- Card 2: Música -->
+                <div class="bg-obsidian/80 border border-gold/20 rounded-2xl p-8 hover:border-gold/60 transition-all duration-500 group">
+                    <div class="w-14 h-14 rounded-2xl bg-charcoal border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-music"></i>
+                    </div>
+                    <h3 class="font-cinzel text-xl text-gold mb-3 tracking-wide">Orquestra & Baile</h3>
+                    <p class="text-ivory/70 text-sm leading-relaxed">
+                        Recepção ao som de quarteto de cordas, seguida por apresentação exclusiva da Orquestra Filarmônica de Câmara e baile elegante até a madrugada.
+                    </p>
+                </div>
+
+                <!-- Card 3: Causa Beneficente -->
+                <div class="bg-obsidian/80 border border-gold/20 rounded-2xl p-8 hover:border-gold/60 transition-all duration-500 group">
+                    <div class="w-14 h-14 rounded-2xl bg-charcoal border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-gavel"></i>
+                    </div>
+                    <h3 class="font-cinzel text-xl text-gold mb-3 tracking-wide">Leilão Filantrópico</h3>
+                    <p class="text-ivory/70 text-sm leading-relaxed">
+                        Leilão silencioso de obras de arte contemporânea e joias exclusivas, com 100% da arrecadação destinada ao Instituto Cultural Jovens Talentos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 4. PROGRAMAÇÃO DA NOITE ==================== -->
+    <section id="programacao" class="py-24 px-6 bg-obsidian relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-gold text-xs tracking-[0.3em] uppercase font-medium block mb-3">Cronograma</span>
+                <h2 class="font-cinzel text-3xl md:text-5xl text-ivory font-semibold mb-4">Programação da Noite</h2>
+                <div class="w-20 h-[1px] bg-gold mx-auto"></div>
+            </div>
+
+            <!-- Linha do Tempo -->
+            <div class="relative border-l border-gold/30 ml-4 md:ml-1/2 space-y-12">
+                <!-- Item 1 -->
+                <div class="relative pl-8 md:pl-12">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-obsidian border-2 border-gold shadow-[0_0_10px_#D4AF37]"></span>
+                    <div class="bg-charcoal/70 border border-gold/20 rounded-2xl p-6 md:p-8 hover:border-gold/50 transition-colors">
+                        <span class="inline-block px-3 py-1 rounded-full bg-gold/10 text-gold text-xs font-semibold tracking-widest mb-3">20h00</span>
+                        <h3 class="font-cinzel text-xl md:text-2xl text-ivory mb-2">Recepção com Coquetel & Tapete Vermelho</h3>
+                        <p class="text-ivory/70 text-sm leading-relaxed">
+                            Boas-vindas no Foyer das Colunas com taças de champagne vintage, canapés finos e acompanhamento musical ao vivo de harpa e violino.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="relative pl-8 md:pl-12">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-obsidian border-2 border-gold shadow-[0_0_10px_#D4AF37]"></span>
+                    <div class="bg-charcoal/70 border border-gold/20 rounded-2xl p-6 md:p-8 hover:border-gold/50 transition-colors">
+                        <span class="inline-block px-3 py-1 rounded-full bg-gold/10 text-gold text-xs font-semibold tracking-widest mb-3">21h15</span>
+                        <h3 class="font-cinzel text-xl md:text-2xl text-ivory mb-2">Abertura do Salão & Jantar de Gala</h3>
+                        <p class="text-ivory/70 text-sm leading-relaxed">
+                            Abertura oficial das portas do Grande Salão Imperial e serviço do menu degustação exclusivo harmonizado.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="relative pl-8 md:pl-12">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-obsidian border-2 border-gold shadow-[0_0_10px_#D4AF37]"></span>
+                    <div class="bg-charcoal/70 border border-gold/20 rounded-2xl p-6 md:p-8 hover:border-gold/50 transition-colors">
+                        <span class="inline-block px-3 py-1 rounded-full bg-gold/10 text-gold text-xs font-semibold tracking-widest mb-3">22h45</span>
+                        <h3 class="font-cinzel text-xl md:text-2xl text-ivory mb-2">Cerimônia de Honrarias & Leilão Beneficente</h3>
+                        <p class="text-ivory/70 text-sm leading-relaxed">
+                            Discurso dos anfitriões, entrega da Medalha Mérito Cultural 2026 e condução do leilão beneficente de peças exclusivas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="relative pl-8 md:pl-12">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-obsidian border-2 border-gold shadow-[0_0_10px_#D4AF37]"></span>
+                    <div class="bg-charcoal/70 border border-gold/20 rounded-2xl p-6 md:p-8 hover:border-gold/50 transition-colors">
+                        <span class="inline-block px-3 py-1 rounded-full bg-gold/10 text-gold text-xs font-semibold tracking-widest mb-3">23h30</span>
+                        <h3 class="font-cinzel text-xl md:text-2xl text-ivory mb-2">Valsa de Abertura & Baile de Gala</h3>
+                        <p class="text-ivory/70 text-sm leading-relaxed">
+                            Abertura da pista de dança com a Orquestra Gala Royale, seguida por repertório clássico, jazz contemporâneo e lounge bar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 5. DRESS CODE: BLACK TIE ==================== -->
+    <section id="dress-code" class="py-24 px-6 bg-charcoal border-y border-gold/15">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold text-xs tracking-[0.3em] uppercase font-medium block mb-3">Etiqueta & Elegância</span>
+                <h2 class="font-cinzel text-3xl md:text-5xl text-ivory font-semibold mb-4">Dress Code: Black Tie</h2>
+                <div class="w-20 h-[1px] bg-gold mx-auto mb-6"></div>
+                <p class="text-ivory/75 text-sm md:text-base leading-relaxed">
+                    Para preservar a atmosfera solene e atemporal do evento, solicitamos rigorosamente o traje <strong class="text-gold font-medium">Black Tie (Gala)</strong>.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Traje Masculino -->
+                <div class="bg-obsidian border border-gold/25 rounded-2xl p-8 md:p-10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="font-cinzel text-2xl text-gold">Para Eles</h3>
+                            <i class="fa-solid fa-user-tie text-gold/70 text-2xl"></i>
+                        </div>
+                        <ul class="space-y-4 text-sm text-ivory/80">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-diamond text-[10px] text-gold mt-1.5"></i>
+                                <span><strong>Smoking clássico</strong> na cor preta ou azul meia-noite com lapela de cetim ou gorgorão.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-diamond text-[10px] text-gold mt-1.5"></i>
+                                <span>Camisa social branca rigor com punhos duplos e abotoaduras discretas.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-diamond text-[10px] text-gold mt-1.5"></i>
+                                <span>Gravata borboleta preta em seda e sapatos sociais pretos envernizados (Oxford).</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Traje Feminino -->
+                <div class="bg-obsidian border border-gold/25 rounded-2xl p-8 md:p-10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="font-cinzel text-2xl text-gold">Para Elas</h3>
+                            <i class="fa-solid fa-gem text-gold/70 text-2xl"></i>
+                        </div>
+                        <ul class="space-y-4 text-sm text-ivory/80">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-diamond text-[10px] text-gold mt-1.5"></i>
+                                <span><strong>Vestido longo de gala</strong> em tecidos nobres como seda, veludo, cetim ou tule bordado.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-diamond text-[10px] text-gold mt-1.5"></i>
+                                <span>Joias clássicas e clutch estruturada em tons metálicos ou neutros.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-diamond text-[10px] text-gold mt-1.5"></i>
+                                <span>Solicitamos gentilmente evitar vestidos curtos ou estampas casuais.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paleta Sugerida -->
+            <div class="bg-obsidian/60 border border-gold/20 rounded-2xl p-6 md:p-8 text-center">
+                <p class="text-xs uppercase tracking-[0.25em] text-gold mb-6">Paleta de Cores Sugerida</p>
+                <div class="flex flex-wrap justify-center gap-6 sm:gap-10">
+                    <div class="flex flex-col items-center gap-2">
+                        <span class="w-12 h-12 rounded-full bg-[#0B0B0F] border-2 border-gold/50 shadow-lg"></span>
+                        <span class="text-xs text-ivory/70">Preto Ônix</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <span class="w-12 h-12 rounded-full bg-[#D4AF37] border-2 border-ivory/30 shadow-lg"></span>
+                        <span class="text-xs text-ivory/70">Dourado Champagne</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <span class="w-12 h-12 rounded-full bg-[#4A0E17] border-2 border-gold/30 shadow-lg"></span>
+                        <span class="text-xs text-ivory/70">Bordô Imperial</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <span class="w-12 h-12 rounded-full bg-[#0F2922] border-2 border-gold/30 shadow-lg"></span>
+                        <span class="text-xs text-ivory/70">Verde Esmeralda</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <span class="w-12 h-12 rounded-full bg-[#131B2E] border-2 border-gold/30 shadow-lg"></span>
+                        <span class="text-xs text-ivory/70">Azul Meia-Noite</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 6. LOCALIZAÇÃO ==================== -->
+    <section id="local" class="py-24 px-6 bg-obsidian">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Imagem do Palácio -->
+                <div class="lg:col-span-6">
+                    <div class="relative rounded-2xl overflow-hidden border border-gold/30 shadow-2xl group">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Grand Hotel Imperial - Fachada Iluminada" 
+                             onerror="this.src='https://placehold.co/800x600/14141C/D4AF37?text=Grand+Hotel+Imperial'"
+                             class="w-full h-[380px] md:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="px-3 py-1 rounded-full bg-gold text-obsidian text-[10px] font-bold tracking-widest uppercase">Sede Oficial</span>
+                            <p class="font-cinzel text-xl text-ivory mt-2">Salão Nobre &bull; Grand Hotel Imperial</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detalhes de Endereço e Valet -->
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-gold text-xs tracking-[0.3em] uppercase font-medium block">O Cenário</span>
+                    <h2 class="font-cinzel text-3xl md:text-4xl text-ivory font-semibold">Grand Hotel Imperial</h2>
+                    <div class="w-16 h-[1px] bg-gold"></div>
+                    <p class="text-ivory/75 text-sm md:text-base leading-relaxed">
+                        Um marco arquitetônico neoclássico no coração da cidade, conhecido por seus afrescos centenários, jardins internos iluminados e acústica impecável.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-charcoal border border-gold/30 flex items-center justify-center text-gold shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-cinzel text-sm text-gold uppercase tracking-wider">Endereço</h4>
+                                <p class="text-ivory/80 text-sm">Alameda das Palmeiras, 1500 — Jardins, São Paulo - SP</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-charcoal border border-gold/30 flex items-center justify-center text-gold shrink-0">
+                                <i class="fa-solid fa-car"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-cinzel text-sm text-gold uppercase tracking-wider">Serviço de Valet</h4>
+                                <p class="text-ivory/80 text-sm">Estacionamento privativo com manobrista exclusivo no pórtico principal a partir das 19h30.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="https://maps.google.com/?q=Jardins,Sao+Paulo,SP" target="_blank" rel="noopener noreferrer" 
+                           class="inline-flex items-center gap-3 px-8 py-3.5 rounded-full border border-gold text-gold text-xs tracking-[0.2em] uppercase font-semibold hover:bg-gold hover:text-obsidian transition-all duration-300">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <span>Abrir no Google Maps</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 7. CONFIRMAÇÃO DE PRESENÇA (RSVP) ==================== -->
+    <section id="rsvp" class="py-24 px-6 bg-charcoal border-t border-gold/20 relative">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-gold text-xs tracking-[0.3em] uppercase font-medium block mb-3">Lista de Convidados</span>
+                <h2 class="font-cinzel text-3xl md:text-5xl text-ivory font-semibold mb-4">Confirmação de Presença</h2>
+                <div class="w-20 h-[1px] bg-gold mx-auto mb-6"></div>
+                <p class="text-ivory/75 text-sm md:text-base">
+                    Por gentileza, confirme sua presença até o dia <strong class="text-gold">05 de Dezembro de 2026</strong> para emissão do seu passe digital nominal.
+                </p>
+            </div>
+
+            <!-- Caixa de Mensagem de Erro / Aviso (Substitui alert()) -->
+            <div id="form-feedback" class="hidden mb-6 p-4 rounded-xl bg-red-950/80 border border-red-500/50 text-red-200 text-sm text-center"></div>
+
+            <!-- Formulário RSVP -->
+            <form id="rsvp-form" class="bg-obsidian border border-gold/30 rounded-3xl p-8 md:p-12 shadow-2xl gold-border-glow space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Nome Completo -->
+                    <div>
+                        <label for="guest-name" class="block text-xs uppercase tracking-[0.15em] text-gold mb-2">Nome Completo *</label>
+                        <input type="text" id="guest-name" required placeholder="Ex: Helena Vasconcelos"
+                               class="w-full px-4 py-3.5 rounded-xl bg-charcoal border border-gold/25 text-ivory placeholder-ivory/30 text-sm focus:outline-none focus:border-gold transition-colors">
+                    </div>
+
+                    <!-- E-mail -->
+                    <div>
+                        <label for="guest-email" class="block text-xs uppercase tracking-[0.15em] text-gold mb-2">E-mail para Contato *</label>
+                        <input type="email" id="guest-email" required placeholder="seu.email@dominio.com"
+                               class="w-full px-4 py-3.5 rounded-xl bg-charcoal border border-gold/25 text-ivory placeholder-ivory/30 text-sm focus:outline-none focus:border-gold transition-colors">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Número de Acompanhantes -->
+                    <div>
+                        <label for="guest-companions" class="block text-xs uppercase tracking-[0.15em] text-gold mb-2">Acompanhantes</label>
+                        <select id="guest-companions"
+                                class="w-full px-4 py-3.5 rounded-xl bg-charcoal border border-gold/25 text-ivory text-sm focus:outline-none focus:border-gold transition-colors">
+                            <option value="0">Apenas eu (Individual)</option>
+                            <option value="1">+ 1 Acompanhante</option>
+                            <option value="2">+ 2 Acompanhantes</option>
+                            <option value="3">+ 3 Acompanhantes (Mesa Privativa)</option>
+                        </select>
+                    </div>
+
+                    <!-- Restrições Alimentares -->
+                    <div>
+                        <label for="guest-diet" class="block text-xs uppercase tracking-[0.15em] text-gold mb-2">Restrições Alimentares</label>
+                        <input type="text" id="guest-diet" placeholder="Ex: Vegetariano, sem glúten, nenhuma..."
+                               class="w-full px-4 py-3.5 rounded-xl bg-charcoal border border-gold/25 text-ivory placeholder-ivory/30 text-sm focus:outline-none focus:border-gold transition-colors">
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <button type="submit" 
+                            class="w-full py-4 rounded-full bg-gold text-obsidian font-semibold text-xs tracking-[0.25em] uppercase hover:bg-gold-light transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.35)] cursor-pointer">
+                        Gerar Convite Digital & Confirmar
+                    </button>
+                </div>
+            </form>
+
+            <!-- Cartão de Convite Digital Gerado Dinamicamente -->
+            <div id="digital-pass-container" class="hidden mt-8 fade-in-up">
+                <div class="bg-gradient-to-br from-charcoal via-obsidian to-charcoal border-2 border-gold rounded-3xl p-8 md:p-10 shadow-[0_0_50px_rgba(212,175,55,0.2)] relative overflow-hidden">
+                    <!-- Ornamento de Canto -->
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-bl-full pointer-events-none"></div>
+                    
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gold/25 pb-6 mb-6 gap-4">
+                        <div>
+                            <span class="text-gold text-[10px] tracking-[0.35em] uppercase block">Passe Oficial VIP</span>
+                            <h3 class="font-cinzel text-2xl md:text-3xl text-ivory font-bold mt-1">GALA ROYALE 2026</h3>
+                        </div>
+                        <div class="px-4 py-2 rounded-xl bg-gold/15 border border-gold text-gold font-mono text-sm tracking-widest" id="pass-code">
+                            #GR-8842-VIP
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm mb-8">
+                        <div>
+                            <span class="text-ivory/50 text-xs uppercase tracking-wider block">Convidado(a) Titular</span>
+                            <p id="pass-name" class="font-playfair text-xl text-ivory mt-1">--</p>
+                        </div>
+                        <div>
+                            <span class="text-ivory/50 text-xs uppercase tracking-wider block">Admissão</span>
+                            <p id="pass-guests" class="text-gold font-medium mt-1">--</p>
+                        </div>
+                        <div>
+                            <span class="text-ivory/50 text-xs uppercase tracking-wider block">Data & Horário</span>
+                            <p class="text-ivory/90 mt-1">19 de Dezembro de 2026 &bull; 20h00</p>
+                        </div>
+                        <div>
+                            <span class="text-ivory/50 text-xs uppercase tracking-wider block">Preferência Gastronômica</span>
+                            <p id="pass-diet" class="text-ivory/90 mt-1">--</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-gold/20">
+                        <p class="text-xs text-ivory/60 text-center sm:text-left">
+                            <i class="fa-solid fa-circle-check text-gold mr-1.5"></i> Presença confirmada. Apresente este código na recepção.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <button type="button" id="copy-code-btn" class="px-5 py-2.5 rounded-full bg-gold/20 border border-gold text-gold text-xs uppercase tracking-wider hover:bg-gold hover:text-obsidian transition-colors">
+                                <i class="fa-regular fa-copy mr-1"></i> Copiar Código
+                            </button>
+                            <button type="button" id="reset-rsvp-btn" class="px-4 py-2.5 rounded-full border border-ivory/20 text-ivory/70 text-xs uppercase tracking-wider hover:text-ivory transition-colors">
+                                Novo Registro
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 8. RODAPÉ ==================== -->
+    <footer class="bg-obsidian border-t border-gold/20 py-14 px-6 text-center">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <div class="w-12 h-12 rounded-full border border-gold/60 flex items-center justify-center mx-auto">
+                <span class="font-cinzel text-gold font-bold text-lg">GR</span>
+            </div>
+            
+            <h3 class="font-cinzel text-xl tracking-[0.25em] text-ivory">GALA ROYALE</h3>
+            
+            <p class="text-ivory/60 text-xs tracking-widest uppercase">
+                Concierge & Informações: <a href="mailto:concierge@galaroyale.com.br" class="text-gold hover:underline">concierge@galaroyale.com.br</a> &bull; (11) 3000-2026
+            </p>
+
+            <div class="flex justify-center space-x-6 text-gold/80 text-lg pt-2">
+                <a href="#inicio" aria-label="Instagram" class="hover:text-gold transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#inicio" aria-label="LinkedIn" class="hover:text-gold transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#local" aria-label="Localização" class="hover:text-gold transition-colors"><i class="fa-solid fa-location-dot"></i></a>
+            </div>
+
+            <div class="pt-6 border-t border-ivory/10 text-[11px] text-ivory/40 tracking-wider">
+                &copy; 2026 Gala Royale — Todos os direitos reservados. Traje Black Tie Obrigatório.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT INTERATIVO ==================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Efeito de fundo na Navbar ao rolar a página
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-obsidian/95', 'backdrop-blur-md', 'border-gold/20', 'py-3', 'shadow-xl');
+                    navbar.classList.remove('py-5', 'border-transparent');
+                } else {
+                    navbar.classList.remove('bg-obsidian/95', 'backdrop-blur-md', 'border-gold/20', 'py-3', 'shadow-xl');
+                    navbar.classList.add('py-5', 'border-transparent');
+                }
+            });
+
+            // 2. Controle do Menu Mobile
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // 3. Contador Regressivo Dinâmico
+            // Data do evento: 19 de Dezembro de 2026 às 20:00:00
+            const eventDate = new Date('December 19, 2026 20:00:00').getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = eventDate - now;
+
+                if (distance < 0) {
+                    document.getElementById('countdown').innerHTML = `
+                        <div class="col-span-4 bg-charcoal/90 border border-gold rounded-2xl p-6 text-gold font-cinzel text-xl tracking-widest">
+                            O GRANDE EVENTO COMEÇOU
+                        </div>
+                    `;
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            // 4. Sistema de Confirmação de Presença (RSVP) e Geração de Convite
+            const rsvpForm = document.getElementById('rsvp-form');
+            const passContainer = document.getElementById('digital-pass-container');
+            const feedbackBox = document.getElementById('form-feedback');
+            const copyCodeBtn = document.getElementById('copy-code-btn');
+            const resetRsvpBtn = document.getElementById('reset-rsvp-btn');
+
+            rsvpForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                feedbackBox.classList.add('hidden');
+
+                const nameInput = document.getElementById('guest-name').value.trim();
+                const emailInput = document.getElementById('guest-email').value.trim();
+                const companionsValue = parseInt(document.getElementById('guest-companions').value, 10);
+                const dietInput = document.getElementById('guest-diet').value.trim();
+
+                if (!nameInput || !emailInput) {
+                    feedbackBox.textContent = 'Por favor, preencha seu nome completo e e-mail para emitir o passe.';
+                    feedbackBox.classList.remove('hidden');
+                    return;
+                }
+
+                // Gera um código de acesso exclusivo
+                const randomDigits = Math.floor(1000 + Math.random() * 9000);
+                const initials = nameInput.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
+                const generatedCode = `#GR-${randomDigits}-${initials}`;
+
+                // Preenche os dados no cartão digital
+                document.getElementById('pass-code').textContent = generatedCode;
+                document.getElementById('pass-name').textContent = nameInput;
+                
+                const totalGuestsText = companionsValue === 0 
+                    ? '1 Convite Individual' 
+                    : `Titular + ${companionsValue} Acompanhante(s)`;
+                document.getElementById('pass-guests').textContent = totalGuestsText;
+                document.getElementById('pass-diet').textContent = dietInput || 'Menu Padrão Degustação';
+
+                // Alterna visualização do formulário para o passe digital
+                rsvpForm.classList.add('hidden');
+                passContainer.classList.remove('hidden');
+                passContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+
+            // Botão de copiar código usando fallback compatível com iframes
+            copyCodeBtn.addEventListener('click', () => {
+                const codeText = document.getElementById('pass-code').textContent;
+                const tempInput = document.createElement('input');
+                tempInput.value = codeText;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+
+                const originalHTML = copyCodeBtn.innerHTML;
+                copyCodeBtn.innerHTML = '<i class="fa-solid fa-check mr-1"></i> Copiado!';
+                setTimeout(() => {
+                    copyCodeBtn.innerHTML = originalHTML;
+                }, 2500);
+            });
+
+            // Botão para fazer uma nova confirmação
+            resetRsvpBtn.addEventListener('click', () => {
+                rsvpForm.reset();
+                passContainer.classList.add('hidden');
+                rsvpForm.classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
